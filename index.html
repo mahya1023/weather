@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wgh@400;600&display=swap" rel="style">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Weather app</title>
+    <style>
+        body {
+            background: url('pic.webp') no-repeat center center fixed;
+            background-size: cover;
+            font-family: baskerville, serif;
+        }
+        
+        #father {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-bottom: 5%;
+            margin-top: 5%;
+            height: 23rem;
+            width: 40rem;
+            background: linear-gradient(135deg, #72EDF2, 10%, #5151E5 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 90%;
+        }
+        
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .search {
+            display: flex;
+            gap: 10px;
+            margin: 20px;
+        }
+        
+        #searchBtn {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: snow;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3 ease;
+        }
+        
+        #searchBtn:hover {
+            background: #45a049;
+        }
+        
+        #cityInput {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        #cityInput:focus {
+            border-color: #5151E5;
+            box-shadow: 0 0 5px rgba(81, 81, 229, 0.3);
+        }
+        
+        #weatherResult {
+            color: #000;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.5 ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        #searchBtn:active {
+            transform: scale(0.95);
+        }
+        
+        #weatherResult h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        #weatherResult img {
+            width: 30px;
+            height: 30px;
+        }
+        
+        #weatherResult p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+        
+        @media(max-width: 768px) {
+            #father {
+                width: 90%;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            cityInput {
+                width: 100%;
+                max-width: 300px;
+            }
+            .search {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            #searchBtn {
+                width: 100%;
+                max-width: 200px;
+            }
+            @media(max-width:480px) {
+                h1 {
+                    font-size: 1.2rem;
+                }
+                #father {
+                    margin-top: 10%;
+                    padding: 10
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div calss="cantainer" id="father">
+        <h1>weather app</h1>
+        <div class="search"> <input type="text" id="cityInput" placeholder="Enter your city">
+            <button id="searchBtn">Search</button></div>
+        <div id="weatherResult">
+            your result
+        </div>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+
+</html>
